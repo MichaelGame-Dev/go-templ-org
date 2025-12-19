@@ -1,0 +1,15 @@
+#+TITLE: My First Blog Post
+#+DATE: 2024-12-19
+#+DESCRIPTION: An introduction to my new blog
+#+DRAFT: false
+#+FILETAGS: go templ blogging
+#+EXPORT_FILE_NAME: my-first-post
+
+* Introduction
+
+Welcome to my blog!
+
+* Conclusion
+
+Thanks for reading!
+

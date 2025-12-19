@@ -2,4 +2,12 @@
             body { max-width: 800px; margin: 0 auto; padding: 20px; font-family: sans-serif; }
             article { margin-bottom: 2rem; }
             h1 { color: #333; }
-        </style></head><body><header><h1><a href="/">My Blog</a></h1></header><main><h2>Recent Posts</h2><ul><li><a href="/2024/01/15/first-post/">My First Blog Post</a> <span>- 2024-01-15</span></li></ul></main></body></html>
+        </style><script>
+            // Auto-reload on file changes
+            const evtSource = new EventSource("/_reload/events");
+            evtSource.onmessage = (event) => {
+                if (event.data === "reload") {
+                    location.reload();
+                }
+            };
+        </script></head><body><header><h1><a href="/">My Blog</a></h1></header><main><h2>Recent Posts</h2><ul><li><a href="/posts/my-first-post/">My First Blog Post</a> <span>- 2024-12-19</span></li></ul></main></body></html>

@@ -1,0 +1,40 @@
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>My First Blog Post</title>
+<meta name="description" content="An introduction to my new blog">
+<meta name="keywords" content="go, templ, blogging">
+<meta property="og:type" content="article">
+<meta property="og:title" content="My First Blog Post">
+<meta property="og:description" content="An introduction to my new blog">
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:title" content="My First Blog Post">
+<meta property="twitter:description" content="An introduction to my new blog">
+<style>
+            body { max-width: 800px; margin: 0 auto; padding: 20px; font-family: sans-serif; }
+            article { margin-bottom: 2rem; }
+            h1 { color: #333; }
+        </style><script>
+            // Auto-reload on file changes
+            const evtSource = new EventSource("/_reload/events");
+            evtSource.onmessage = (event) => {
+                if (event.data === "reload") {
+                    location.reload();
+                }
+            };
+        </script></head><body><header><h1><a href="/">My Blog</a></h1></header><main><article><div id="outline-container-headline-1" class="outline-2">
+<h2 id="headline-1">
+Introduction
+</h2>
+<div id="outline-text-headline-1" class="outline-text-2">
+<p>
+Welcome to my blog!</p>
+</div>
+</div>
+<div id="outline-container-headline-2" class="outline-2">
+<h2 id="headline-2">
+Conclusion
+</h2>
+<div id="outline-text-headline-2" class="outline-text-2">
+<p>
+Thanks for reading!</p>
+</div>
+</div>
+</article></main></body></html>

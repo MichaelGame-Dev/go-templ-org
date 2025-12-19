@@ -28,5 +28,12 @@ go.work.sum
 .env
 
 # Editor/IDE
-# .idea/
-# .vscode/
+ .idea/
+.vscode/
+
+# Ignore test/draft posts
+posts/2025-12-19-second-post.org
+posts/2025-12-19-third-post.org
+posts/2025-12-19-yet-another-post.org
+posts/2025-12-20-ok-test.org
+posts/2025-12-21-testing-refresh.org

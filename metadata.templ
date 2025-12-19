@@ -1,0 +1,30 @@
+package main
+
+import "strings"
+
+// SEOMetadata renders SEO meta tags
+templ SEOMetadata(title, description string, tags []string) {
+    <!-- Primary Meta Tags -->
+    <title>{ title }</title>
+    <meta name="title" content={ title }/>
+    if description != "" {
+        <meta name="description" content={ description }/>
+    }
+    if len(tags) > 0 {
+        <meta name="keywords" content={ strings.Join(tags, ", ") }/>
+    }
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article"/>
+    <meta property="og:title" content={ title }/>
+    if description != "" {
+        <meta property="og:description" content={ description }/>
+    }
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image"/>
+    <meta property="twitter:title" content={ title }/>
+    if description != "" {
+        <meta property="twitter:description" content={ description }/>
+    }
+}

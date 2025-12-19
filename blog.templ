@@ -13,6 +13,52 @@ templ Layout(title string) {
             article { margin-bottom: 2rem; }
             h1 { color: #333; }
         </style>
+        <script>
+            // Auto-reload on file changes
+            const evtSource = new EventSource("/_reload/events");
+            evtSource.onmessage = (event) => {
+                if (event.data === "reload") {
+                    location.reload();
+                }
+            };
+        </script>
+    </head>
+    <body>
+        <header>
+            <h1><a href="/">My Blog</a></h1>
+        </header>
+        <main>
+            { children... }
+        </main>
+    </body>
+    </html>
+}
+
+// LayoutWithSEO provides the base HTML structure with SEO metadata
+templ LayoutWithSEO(title, description string, tags []string) {
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+        <!-- Include SEO metadata component -->
+        @SEOMetadata(title, description, tags)
+
+        <style>
+            body { max-width: 800px; margin: 0 auto; padding: 20px; font-family: sans-serif; }
+            article { margin-bottom: 2rem; }
+            h1 { color: #333; }
+        </style>
+        <script>
+            // Auto-reload on file changes
+            const evtSource = new EventSource("/_reload/events");
+            evtSource.onmessage = (event) => {
+                if (event.data === "reload") {
+                    location.reload();
+                }
+            };
+        </script>
     </head>
     <body>
         <header>
@@ -26,19 +72,18 @@ templ Layout(title string) {
 }
 
 // Unsafe renders raw HTML without escaping
-// This is necessary for rendering the HTML output from go-org
 templ Unsafe(html string) {
     @templ.Raw(html)
 }
-
 // PostPage renders a single blog post
-templ PostPage(title, content string) {
-    @Layout(title) {
+templ PostPage(post Post) {
+    @Layout(post.Title) {
         <article>
-            @Unsafe(content)
+            @Unsafe(post.Content)
         </article>
     }
 }
+
 
 // IndexPage renders the blog index with a list of posts
 templ IndexPage(posts []Post) {
