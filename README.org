@@ -1,0 +1,13 @@
+#+title: Readme
+
+This is a very simple POC for using Go + Templ and instead of using markdown like in the example here https://templ.guide/static-rendering/blog-example I'm using org files similar to how hugo would using the go-org parser https://github.com/niklasfasching/go-org
+
+## Using the program
+Add Org posts to ~/posts~ and then run ~go run . serve~ to generate the site and serve with a very simple server at ~localhost:8080~.
+
+There would be much more to add for this to be useable, things like:
+- [ ] Live Reloading
+- [ ] Better Filename handling
+  Personally, I wonder if we could get the date from a ~#+Date:~ in the org header content.
+
+That being said, luckily we should be able to add components, html, etc. easily, though we'd need a good way to do so in the middle of blog posts if we wanted that functionality.
