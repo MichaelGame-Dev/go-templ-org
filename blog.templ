@@ -1,0 +1,56 @@
+package main
+
+// Layout provides the base HTML structure
+templ Layout(title string) {
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>{ title }</title>
+        <style>
+            body { max-width: 800px; margin: 0 auto; padding: 20px; font-family: sans-serif; }
+            article { margin-bottom: 2rem; }
+            h1 { color: #333; }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1><a href="/">My Blog</a></h1>
+        </header>
+        <main>
+            { children... }
+        </main>
+    </body>
+    </html>
+}
+
+// Unsafe renders raw HTML without escaping
+// This is necessary for rendering the HTML output from go-org
+templ Unsafe(html string) {
+    @templ.Raw(html)
+}
+
+// PostPage renders a single blog post
+templ PostPage(title, content string) {
+    @Layout(title) {
+        <article>
+            @Unsafe(content)
+        </article>
+    }
+}
+
+// IndexPage renders the blog index with a list of posts
+templ IndexPage(posts []Post) {
+    @Layout("Blog Home") {
+        <h2>Recent Posts</h2>
+        <ul>
+            for _, post := range posts {
+                <li>
+                    <a href={ templ.URL(post.URL) }>{ post.Title }</a>
+                    <span> - { post.Date }</span>
+                </li>
+            }
+        </ul>
+    }
+}

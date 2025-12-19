@@ -1,0 +1,18 @@
+* My First Blog Post
+
+This is my first post using Org-mode!
+
+** Why Org-mode?
+
+- Clean syntax
+- Great for technical writing
+- Native Emacs support
+
+Here's some code:
+
+#+BEGIN_SRC go
+func main() {
+    fmt.Println("Hello from Org!")
+}
+#+END_SRC
+
