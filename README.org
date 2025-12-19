@@ -24,5 +24,6 @@ There would be much more to add for this to be useable, things like:
 #+GISCUS: true
 #+OGIMAGE: true
   #+end_src
+Update: This is partially done. Some of the meta data like title, date and description are included now and posts are under /posts/title.
 
 That being said, luckily we should be able to add components, html, etc. easily, though we'd need a good way to do so in the middle of blog posts if we wanted that functionality.
