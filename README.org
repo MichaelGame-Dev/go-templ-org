@@ -2,7 +2,7 @@
 
 This is a very simple POC for using Go + Templ and instead of using markdown like in the example here https://templ.guide/static-rendering/blog-example I'm using org files similar to how hugo would using the go-org parser https://github.com/niklasfasching/go-org
 
-## Using the program
+** Using the program
 Add Org posts to ~/posts~ and then run ~go run . serve~ to generate the site and serve with a very simple server at ~localhost:8080~.
 
 There would be much more to add for this to be useable, things like:
