@@ -9,5 +9,20 @@ There would be much more to add for this to be useable, things like:
 - [ ] Live Reloading
 - [ ] Better Filename handling
   Personally, I wonder if we could get the date from a ~#+Date:~ in the org header content.
+  End goal would be adapting something to be able to parse data from the org frontmatter:
+  #+begin_src org
+
+#+TITLE: title
+#+DATE: 2025-12-16
+#+DESCRIPTION: Brief description for SEO
+#+DRAFT: false
+#+FILETAGS: primary-tag secondary-tag
+#+OPTIONS: toc:t
+#+EXPORT_FILE_NAME: title-name
+#+LASTMOD:
+#+SHARE: true
+#+GISCUS: true
+#+OGIMAGE: true
+  #+end_src
 
 That being said, luckily we should be able to add components, html, etc. easily, though we'd need a good way to do so in the middle of blog posts if we wanted that functionality.
